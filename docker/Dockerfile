@@ -48,7 +48,7 @@ RUN set -ex; \
     apk add --no-cache busybox-suid su-exec libstdc++; \
     adduser --disabled-password --home "$HOME" recyclarr;
 
-COPY --chown=recyclarr:recyclarr --chmod=544 --from=build /build/recyclarr /usr/local/bin
-COPY --chown=recyclarr:recyclarr --chmod=544 entrypoint.sh /
+COPY --chown=recyclarr:recyclarr --chmod=777 --from=build /build/recyclarr /usr/local/bin
+COPY --chown=recyclarr:recyclarr --chmod=777 entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
